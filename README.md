@@ -51,8 +51,8 @@ Projeto_Locadora/
 ## 👨‍🏫 Informações Acadêmicas
 
 - *Disciplina:* Análise de Dados com Python  
-- *Professor:* [Nome do Professor]  
-- *Aluno(s):* [Seu Nome e/ou nomes do grupo]  
+- *Professor:* Andre  
+- *Aluno(s):* Giovana Rafaela, Tobias, Pedro Dias, Maria Eduarda Claro 
 - *Data de Entrega:* 20 de junho de 2025
 
 ---
