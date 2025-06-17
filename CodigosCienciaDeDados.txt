@@ -1,0 +1,53 @@
+# Bibliotecas utilizadas
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+
+np.random.seed(42)
+
+n = 500
+
+# Criação do DataFrame
+dados = pd.DataFrame({
+    'idade': np.random.randint(18, 65, size=n),
+    'genero': np.random.choice(['Masculino', 'Feminino'], size=n),
+    'avaliacao_filme': np.random.randint(1, 6, size=n),
+    'qtd_filmes_alugados': np.random.poisson(5, size=n),
+    'tempo_medio_uso_mes': np.random.normal(6, 2, size=n).round(1),
+    'categoria_favorita': np.random.choice(['Ação', 'Comédia', 'Terror', 'Romance', 'Drama'], size=n)
+})
+
+dados.head()
+
+# 3 - Medidas de Tendência Central
+print("Média de idade:", dados['idade'].mean())
+print("Mediana:", dados['idade'].median())
+print("Moda da avaliação:", dados['avaliacao_filme'].mode()[0])
+
+# 4 - Medidas de Dispersão
+print("Desvio padrão de filmes alugados:", dados['qtd_filmes_alugados'].std())
+print("Variância:", dados['qtd_filmes_alugados'].var())
+print("Amplitude:", dados['qtd_filmes_alugados'].max() - dados['qtd_filmes_alugados'].min())
+
+# 8 - Visualizações com Gráficos Estatísticos
+sns.histplot(dados['idade'], bins=10, kde=True)
+plt.title('Distribuição de Idade dos Clientes')
+plt.xlabel('Idade')
+plt.ylabel('Frequência')
+plt.show()
+
+# 10 - Análise de Dados Categóricos
+sns.boxplot(x='genero', y='tempo_medio_uso_mes', data=dados)
+plt.title('Tempo Médio de Uso por Gênero')
+plt.show()
+
+# 5 - Teste de normalidade
+shapiro_idade = stats.shapiro(dados['idade'])
+print('Shapiro-Wilk para Idade:', shapiro_idade)
+
+# 6 - Correlação entre Variáveis
+sns.heatmap(dados[['idade', 'avaliacao_filme', 'qtd_filmes_alugados', 'tempo_medio_uso_mes']].corr(), annot=True, cmap='coolwarm')
+plt.title('Correlação entre Variáveis Numéricas')
+plt.show()
