@@ -4,17 +4,6 @@ Este repositório contém o projeto final da disciplina *Análise de Dados com P
 
 ---
 
-## 📁 Estrutura do Repositório
-
-Projeto_Locadora/
-├── Projeto_Locadora_Colab.ipynb # Notebook com toda a análise
-├── Projeto_Locadora_ABNT.docx # Relatório técnico conforme ABNT
-├── LinkColab.txt # Link direto para o notebook no Google Colab
-└── README.md # Este arquivo
-
-
----
-
 ## ▶ Como Executar
 
 1. **Abra o arquivo LinkColab.txt** localizado neste repositório.
